@@ -18,7 +18,7 @@ const useCountDownTimer = (seconds: number) => {
     }, [seconds]);
 
     useEffect(() => {
-        if (intervalRef.current) {
+        if (!timeLeft && intervalRef.current) {
             clearInterval(intervalRef.current);
         }
     }, [timeLeft, intervalRef]);
